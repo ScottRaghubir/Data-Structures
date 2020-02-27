@@ -33,10 +33,11 @@ public class ArrayList<E> implements List<E> {
 		return index != -1;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public E get(int index) {
 		if (index < 0 || index >= data.length)
-		throw new IllegalArgumentException("index out of bounds");
+			throw new IllegalArgumentException("index out of range");
 		return (E) data[index];
 	}
 
@@ -47,7 +48,6 @@ public class ArrayList<E> implements List<E> {
 
 	@Override
 	public void clear() {
-		 data = new Object[0];
-
+		data = new Object[0];
 	}
 }
